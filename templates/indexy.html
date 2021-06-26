@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Emoji Prediction</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+    <!--<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/font-awesome.min.css') }}">
+    <!--<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">-->
+
+
+    <style type="text/css">
+        .mobileShow {display: none;}
+      
+        /* Smartphone Portrait and Landscape */
+        @media only screen
+          and (min-device-width : 320px)
+          and (max-device-width : 480px){ 
+            .mobileShow {display: inline;}
+        }
+
+        .mobileHide { display: inline; }
+
+  /* Smartphone Portrait and Landscape */
+  @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px){
+     .mobileHide { display: none;}
+  }
+      </style>
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="#page-top">EMOJI PREDICTOR</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"></li>
+                    <li class="nav-item mx-0 mx-lg-1"></li>
+                    <li class="nav-item mx-0 mx-lg-1"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <form method="post">
+    <header class="text-center text-white bg-primary masthead">
+        <div class="container" style="margin-top: 0px;"><img class="img-fluid d-block mx-auto mb-5" src="{{ url_for('static',filename='styles/profile.png') }}">
+            <p>Enter the text below</p><input type="text" style="margin-top: 18px;" name="inp_text">
+        </div><button class="btn btn-primary" type="submit" style="margin-top: 26px;background: var(--bs-indigo);">Predict</button>
+        <hr>
+        {% if 1 ==display %}
+        <h2 style="margin-top: 39px;text-align: center;">Predicted Emoji</h2>
+        <p style="margin-top: 3px;text-align: center;">{% for _ in range(6) %} {{ emoji_output }}  {% endfor %}</p>
+        
+        <h2 style="margin-top: 19px;text-align: center;">Predicted Song</h2>
+        <div class="mobileHide" style="margin-top:20px;height: 400px;border-style: none;border-color: var(--bs-indigo);width: 600px;text-align: center;margin-left: 10%;"> <iframe width="580" height="380" src="https://www.youtube.com/embed{{ url_out}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></video></div>
+        <div class="mobileShow" style="margin-top:20px;height: 400px;border-style: none;border-color: var(--bs-indigo);width: 600px;text-align: center;margin-left: 10%;"> <iframe width="280" height="180" src="https://www.youtube.com/embed{{ url_out}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></video></div>
+    </header>
+    {% endif %}
+    </form>
+
+    <div class="text-center text-white copyright py-4">
+        <div class="container"><small>Emoji Predictor</small></div>
+    </div>
+    <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="text-center d-block rounded text-white" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-1">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/cabin.png">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{url_for('static', filename='/javascript/bootstrap.min.js')}}"></script>
+    <!--<script src="assets/bootstrap/js/bootstrap.min.js"></script>-->
+    <script src="{{url_for('static', filename='/javascript/freelancer.js')}}"></script>
+    <!--<script src="assets/js/freelancer.js"></script>-->
+</body>
+
+</html>
