@@ -1,9 +1,5 @@
-
-
-
 emoji==1.2.0
 entrypoints==0.3
-
 flake8==3.8.3
 Flask==1.1.2
 Flask-Bootstrap==3.3.7.1
@@ -143,9 +139,7 @@ tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.0
 tensorflow==2.5.0
 tensorflow-estimator==2.5.0
-
 tqdm @ file:///tmp/build/80754af9/tqdm_1593446365756/work
 webencodings==0.5.1
 websockets==8.1
 Werkzeug==1.0.1
-
