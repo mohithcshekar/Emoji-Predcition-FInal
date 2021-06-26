@@ -1,10 +1,7 @@
 emoji==1.2.0
 Flask==1.1.2
-Flask-Bootstrap==3.3.7.1
 Keras==2.4.3
 keras-nightly==2.5.0.dev2021032900
-Keras-Preprocessing==1.1.2
-numexpr==2.7.1
 numpy==1.19.5
 tensorflow==2.5.0
 Werkzeug==1.0.1
