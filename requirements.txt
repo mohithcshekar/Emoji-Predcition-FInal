@@ -21,10 +21,6 @@ numexpr==2.7.1
 numpy==1.19.5
 
 oauthlib==3.1.1
-
-
-
-scikit-image==0.16.2
 seaborn==0.10.1
 tables==3.6.1
 tblib==1.6.0
