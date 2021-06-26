@@ -18,12 +18,12 @@ Markdown==3.3.4
 
 numba==0.50.1
 numexpr==2.7.1
-numpy==1.19.5
+numpy
 
 oauthlib==3.1.1
 
 
-pyparsing==2.4.7
+
 scikit-image==0.16.2
 seaborn==0.10.1
 tables==3.6.1
